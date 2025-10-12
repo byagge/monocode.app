@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Услуги — monocode</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            html, body { height: 100%; margin: 0; }
+            html { scroll-behavior: smooth; scrollbar-color: #d1d5db #ffffff; scrollbar-width: thin; }
+            html::-webkit-scrollbar { width: 8px; height: 8px; }
+            html::-webkit-scrollbar-track { background: #ffffff; }
+            html::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 8px; }
+            body { background: #ffffff; color: #6b7280; font: 14px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; overflow-y: auto; padding-top: 56px;
+                cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'><defs><filter id='s' x='-50%' y='-50%' width='200%' height='200%'><feDropShadow dx='0' dy='0' stdDeviation='0.3' flood-color='%239ca3af' flood-opacity='0.35'/></filter></defs><g filter='url(%23s)'><path d='M11 1.8 L20.2 11 L11 20.2 L1.8 11 Z' fill='%23ffffff' fill-opacity='0.7' stroke='%239ca3af' stroke-width='1.1'/><circle cx='11' cy='11' r='1.1' fill='%239ca3af'/></g></svg>") 11 11, auto; }
+            a, button, .btn { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'><path d='M11 1.8 L20.2 11 L11 20.2 L1.8 11 Z' fill='%23f9fafb' stroke='%23111827' stroke-width='1.5'/><circle cx='11' cy='11' r='1.2' fill='%23111827'/></svg>") 11 11, pointer; }
+            header.site { position: fixed; top: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; z-index: 2; background: rgba(255,255,255,0.72); border-bottom: 1px solid #f3f4f6; backdrop-filter: saturate(160%) blur(6px); transition: background 200ms ease, backdrop-filter 200ms ease, box-shadow 200ms ease; }
+            header.site.scrolled { background: rgba(255,255,255,0.9); backdrop-filter: saturate(180%) blur(12px); box-shadow: 0 4px 12px rgba(17,24,39,0.04); }
+            header .wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; }
+            .brand { color: #111827; font-weight: 600; letter-spacing: -0.01em; }
+            nav a { color: #6b7280; text-decoration: none; margin-left: 16px; font-size: 13px; }
+            nav a:hover { color: #111827; }
+            .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+            .section { padding: 48px 0; }
+            .section + .section { border-top: 1px solid #f3f4f6; }
+            h1 { margin: 0 0 12px; font-weight: 600; font-size: 40px; line-height: 1.15; color: #111827; letter-spacing: -0.01em; text-align: center; }
+            .sub { margin: 0 0 20px; color: #4b5563; text-align: center; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+            .card { padding: 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #ffffff; }
+            .card h3 { margin: 0 0 8px; font-size: 18px; color: #111827; }
+            .card p { margin: 0; font-size: 14px; color: #6b7280; }
+            .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: step; }
+            .step { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: #ffffff; position: relative; }
+            .step::before { counter-increment: step; content: counter(step); position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; border-radius: 50%; background: #f3f4f6; color: #111827; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; }
+            .btn { display: inline-block; padding: 10px 16px; border: 1px solid #e5e7eb; border-radius: 10px; color: #111827; text-decoration: none; background: #ffffff; }
+            .btn:hover { background: #f9fafb; }
+            .partner-strip { border-top: 1px solid #f3f4f6; border-bottom: 1px solid #f3f4f6; background: #ffffff; overflow: hidden; }
+            .partner-track { display: inline-flex; gap: 32px; padding: 14px 16px; will-change: transform; animation: marquee 22s linear infinite; }
+            .partner { display: inline-flex; align-items: center; padding: 6px 12px; border: 1px solid #e5e7eb; border-radius: 999px; color: #374151; background: #fff; white-space: nowrap; font-size: 13px; }
+            @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+            footer { background: #ffffff; text-align: center; padding: 12px 16px; }
+            footer a { color: inherit; text-decoration: none; margin: 0 8px; opacity: 0.85; }
+            footer a:hover { opacity: 1; text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <header class="site">
+            <div class="wrap">
+                <div class="brand">monocode</div>
+                <nav>
+                    <a href="/">Главная</a>
+                    <a href="about.html">О студии</a>
+                    <a href="portfolio.html">Портфолио</a>
+                    <a href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1>Услуги</h1>
+                <p class="sub">От первого скетча до запуска продукта — минимализм, скорость и система.</p>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Веб‑сайты</h3>
+                        <p>Лендинги, корпоративные сайты, промо и продуктовые страницы.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Дизайн‑системы</h3>
+                        <p>Гайдлайны, компоненты, типографика, библиотека паттернов.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Брендинг</h3>
+                        <p>Логотипы, айдентика, визуальные метафоры и анимация.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Прототипирование</h3>
+                        <p>Кликабельные прототипы, тестирование гипотез и сценариев.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="section">
+            <div class="container">
+                <h2>Технологии</h2>
+                <p class="sub">Понятные инструменты, которые важны клиенту.</p>
+                <div class="grid">
+                    <div class="card"><span class="badge">Figma</span> <span class="pill" style="margin-left:8px;">Макеты и прототипы</span></div>
+                    <div class="card"><span class="badge">WordPress</span> <span class="pill" style="margin-left:8px;">CMS</span></div>
+                    <div class="card"><span class="badge">Tilda</span> <span class="pill" style="margin-left:8px;">Быстрые лендинги</span></div>
+                    <div class="card"><span class="badge">React</span> <span class="pill" style="margin-left:8px;">Интерфейсы</span></div>
+                    <div class="card"><span class="badge">Next.js</span> <span class="pill" style="margin-left:8px;">Скорость и SEO</span></div>
+                    <div class="card"><span class="badge">Shopify</span> <span class="pill" style="margin-left:8px;">E‑commerce</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Процесс</h2>
+                <p class="sub">Прозрачные шаги и короткие итерации.</p>
+                <div class="process">
+                    <div class="step">
+                        <h3>Бриф и цели</h3>
+                        <p>Погружаемся в контекст, формулируем метрики успеха.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Прототип</h3>
+                        <p>Карта экранов, сценарии и быстрые тесты с пользователями.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Дизайн</h3>
+                        <p>Система, визуальный язык, анимация и состояние.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Запуск</h3>
+                        <p>Сборка, оптимизация, аналитика и поддержка.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Партнёры</h2>
+                <p class="sub">Команды, с которыми мы работали.</p>
+            </div>
+            <div class="partner-strip" aria-hidden="false">
+                <div class="partner-track">
+                    <span class="partner">Acme</span>
+                    <span class="partner">Northwind</span>
+                    <span class="partner">Globex</span>
+                    <span class="partner">Umbrella</span>
+                    <span class="partner">Wayne</span>
+                    <span class="partner">Initech</span>
+                    <span class="partner">Stark</span>
+                    <span class="partner">Hooli</span>
+                    <span class="partner">Acme</span>
+                    <span class="partner">Northwind</span>
+                    <span class="partner">Globex</span>
+                    <span class="partner">Umbrella</span>
+                    <span class="partner">Wayne</span>
+                    <span class="partner">Initech</span>
+                    <span class="partner">Stark</span>
+                    <span class="partner">Hooli</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contacts">
+            <div class="container">
+                <h2 style="text-align: center;">Свяжитесь с нами</h2>
+                <p class="sub">Опишите задачу — предложим формат и сроки.</p>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap:16px;">
+                    <div class="card" style="display:flex;align-items:center;justify-content:space-between;">
+                        <div>
+                            <h3>Почта</h3>
+                            <p><a href="#" style="text-decoration:none;">hello@monocode.app</a></p>
+                        </div>
+                        <i class='bx bx-mail-send' style="font-size:20px;color:#111827;"></i>
+                    </div>
+                    <div class="card" style="display:flex;align-items:center;justify-content:space-between;">
+                        <div>
+                            <h3>Telegram</h3>
+                            <p><a href="#" style="text-decoration:none;">@monocode_studio</a></p>
+                        </div>
+                        <i class='bx bxl-telegram' style="font-size:20px;color:#111827;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+        (function() {
+            const header = document.querySelector('header.site');
+            const onScroll = () => { if (window.scrollY > 8) header.classList.add('scrolled'); else header.classList.remove('scrolled'); };
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+        </script>
+        <footer>
+            <a href="/" rel="noopener">Главная</a>
+            <a href="about.html" rel="noopener">О студии</a>
+            <a href="#contacts" rel="noopener">Услуги</a>
+            <!-- <a href="#" target="_blank" rel="noopener">Telegram</a>
+            <a href="#" target="_blank" rel="noopener">Behance</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a> -->
+            </br>
+            <p style="margin-top: 7px;">Сделано с <span class="heart" aria-label="с любовью"><i class='bx bxs-heart' style="color:red;"></i></span> студией monocode • © <span id="y"></span></p>
+            <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+        </footer>
+    </body>
+</html>
+
+
